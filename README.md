@@ -28,10 +28,12 @@ Return 200 and JSON with the inference results in the body.
 # Proof following points
 
 Check for the each case:
-- FPS;
+
+- page load time (show in the html - time to the 1st result);
+- client FPS (show in the html);
 - network traffic/FPS;
-- server load = f(reqs);
-- N reqs when FPS<=1 (server collapses)
+- server load = f(reqs), draw a graph;
+- N reqs when FPS<=1 (server collapses) - cut-off point;
 - GPU effect (if available)
 
 - client-based (at GG):

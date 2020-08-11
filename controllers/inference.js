@@ -3,6 +3,7 @@ exports.index = function(req, res, next) {
   }
 
 exports.postCanvas = function(req, res, next) {
+  // TODO: receive the image and run the inference: return results, backend type.
   res.json({ inference: 'OK' })
 }
 

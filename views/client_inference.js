@@ -7,7 +7,7 @@
 
     tf.enableProdMode(); // remove checks for performance
     const model = await mobilenet.load();
-    backend.innerHTML = `Backend: ${tf.getBackend()}`;
+    backend.innerHTML = tf.getBackend();
 
     const videoStream = await navigator.mediaDevices.getUserMedia({
       audio: false,
@@ -22,7 +22,7 @@
       ctx.drawImage(myVideo, 0, 0, 500, 500);
       const predictions = await model.classify(myCanvas);
       console.log(predictions);
-      status.innerHTML = `Predictions: ${predictions[0].className}@${predictions[0].probability.toPrecision(1)}`;
+      status.innerHTML = `${predictions[0].className}@${predictions[0].probability.toPrecision(1)}`;
 
       //requestAnimationFrame(predict);
       setTimeout(() => predict(), 300);

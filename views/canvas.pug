@@ -7,8 +7,19 @@ head
   meta(name='viewport' content='width=device-width, initial-scale=1')
   title Server-side inference
   link(rel='stylesheet' href='')
-#backend
-#status
+table(border='1')
+  tr
+    td Image
+    td Model
+    td Inference
+    td Backend
+    td Predictions
+  tr
+    td client
+    td server
+    td server
+    td#backend
+    td#status
 video#myVideo(autoplay='' muted='' playsinline='')
 canvas#myCanvas(width='500' height='500' style='display: none;')
 script
