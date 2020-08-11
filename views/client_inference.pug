@@ -1,0 +1,16 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='description' content='')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  title Client-side inference
+  link(rel='stylesheet' href='')
+script(src='https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.1')
+script(src='https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@1.0.0')
+#backend
+#status
+video#myVideo(autoplay='' muted='' playsinline='')
+canvas#myCanvas(width='500' height='500' style='display: none;')
+script
+  include client_inference.js

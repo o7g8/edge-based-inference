@@ -24,3 +24,26 @@ Use the returned `responseText` in the `xhttp.onreadystatechange`.
 <https://stackoverflow.com/questions/1226810/is-http-post-request-allowed-to-send-back-a-response-body>
 
 Return 200 and JSON with the inference results in the body.
+
+# Proof following points
+
+Check for the each case:
+- FPS;
+- network traffic/FPS;
+- server load = f(reqs);
+- N reqs when FPS<=1 (server collapses)
+- GPU effect (if available)
+
+- client-based (at GG):
+  - (image on client, model on client) read own video into canvas 500x500.
+  - (image on server, model on client) get image from the server (random 500x500 picture) and infer locally.
+  - (image on server, model on client) get image from CloudFront (random 500x500 picture) and infer locally.
+
+- edge-based (at GG):
+  - (image on client, model on server) send canvas 500x500 to the server
+  - (image on server, model on server) request inference results of 500x500 images already stored on the server
+
+- edge-based (Lambda@Edge/CloudFront):
+  - (image on client, model on server) send canvas 500x500 to the server
+  - (image on server, model on server) request inference results of 500x500 images already stored on the server
+ 
