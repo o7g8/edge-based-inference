@@ -25,14 +25,14 @@
       ctx.drawImage(myVideo, 0, 0, 500, 500);
       await serverPredict(myCanvas);
       //requestAnimationFrame(predict);
-      setTimeout(() => predict(), 1000);
+      setTimeout(() => predict(), 5000);
     }
 
     async function serverPredict(cnv) {
       var imageJpg = myCanvas.toDataURL('image/jpeg', 1.0);
       xhttp.open('POST', '/inference/api/canvas', true);
       xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      xhttp.send("imgData=" + imageJpg);
+      xhttp.send("imgData=" + encodeURIComponent(imageJpg));
     }
 
     function processInferenceResult(result) {
