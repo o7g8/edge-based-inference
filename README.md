@@ -25,6 +25,35 @@ Use the returned `responseText` in the `xhttp.onreadystatechange`.
 
 Return 200 and JSON with the inference results in the body.
 
+# Do the server-side inference
+
+- Install node-gyp (for Mac OS X check XCode CLI tools <https://github.com/nodejs/node-gyp/blob/master/macOS_Catalina.md#installing-node-gyp-using-the-xcode-command-line-tools-via-manual-download>):
+
+`npm install -g node-gyp`
+
+- Install tfjs, tfjs-node, and MobileNet:
+
+`npm install @tensorflow/tfjs @tensorflow/tfjs-node @tensorflow-models/mobilenet`
+
+
+
+
+<https://jamesthom.as/2018/08/machine-learning-in-node.js-with-tensorflow.js/>
+<https://gist.github.com/jthomas/145610bdeda2638d94fab9a397eb1f1d>
+<https://sean12697.github.io/blog/2019/07/15/mobilenet-in-nodejs.html> - focus on local model!!
+<https://morioh.com/p/a517bc403340> - works also with local models
+<https://github.com/tensorflow/tfjs/issues/740>
+
+<https://www.tensorflow.org/js/guide/nodejs>
+<https://github.com/tensorflow/tfjs/tree/master/tfjs-node>
+<https://www.npmjs.com/package/@tensorflow-models/mobilenet>
+
+## Server-side GPU inference
+
+<https://www.npmjs.com/package/@tensorflow/tfjs-node> has MNIST example
+
+## Model conversion from Keras/TF
+
 # Proof following points
 
 Check for the each case:

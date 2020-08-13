@@ -35,9 +35,10 @@
       xhttp.send("imgData=" + encodeURIComponent(imageJpg));
     }
 
-    function processInferenceResult(result) {
-      console.log(result);
-      //status.innerHTML = `Predictions: ${predictions[0].className}@${predictions[0].probability.toPrecision(1)}`;
-      //backend.innerHTML = `Backend: ${tf.getBackend()}`;
+    function processInferenceResult(resultStr) {
+      console.log(resultStr);
+      const result = JSON.parse(resultStr);
+      status.innerHTML = `${result.className}@${result.probability.toPrecision(1)}`;
+      backend.innerHTML = result.backend;
     }
   })();
