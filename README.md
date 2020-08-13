@@ -1,10 +1,32 @@
+# Examples of client- and server-side inference with TensorFlow.js/MobileNet on Express.js
+
+## Client-side inference with TensorFlow.js/MobileNet
+
+Open <http://localhost:3000/inference>
+Backend: WebGL (depends on the browser/platform)
+
+## Server-side inference with TensorFlow.js/MobileNet
+
+Open <http://localhost:3000/inference/canvas>
+CPU inference: 50ms
+Model load (incl. network latency): 2500ms
+
+- Prerequisite: Install node-gyp (for Mac OS X check XCode CLI tools <https://github.com/nodejs/node-gyp/blob/master/macOS_Catalina.md#installing-node-gyp-using-the-xcode-command-line-tools-via-manual-download>):
+
+`npm install -g node-gyp`
+
+- The server-side dependes on @tensorflow/tfjs @tensorflow/tfjs-node @tensorflow-models/mobilenet.
+
+
+# Inspiration
+
 Taken from a course:
 
 - <https://www.youtube.com/watch?v=G8uL0lFFoN0>
 - <https://getbuzz.io/c/learning-expressjs>
 - <https://github.com/buzz-software/expressjs-mvp-landing-page>
 
-# POST canvas to server
+## POST canvas to server
 
 <https://stackoverflow.com/questions/13198131/how-to-save-an-html5-canvas-as-an-image-on-a-server>
 
@@ -27,16 +49,7 @@ Return 200 and JSON with the inference results in the body.
 
 # Do the server-side inference
 
-- Install node-gyp (for Mac OS X check XCode CLI tools <https://github.com/nodejs/node-gyp/blob/master/macOS_Catalina.md#installing-node-gyp-using-the-xcode-command-line-tools-via-manual-download>):
-
-`npm install -g node-gyp`
-
-- Install tfjs, tfjs-node, and MobileNet:
-
-`npm install @tensorflow/tfjs @tensorflow/tfjs-node @tensorflow-models/mobilenet`
-
-
-
+Materials:
 
 <https://jamesthom.as/2018/08/machine-learning-in-node.js-with-tensorflow.js/>
 <https://gist.github.com/jthomas/145610bdeda2638d94fab9a397eb1f1d>
