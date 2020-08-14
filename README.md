@@ -47,3 +47,9 @@ Model load (incl. network latency): 2500ms
 docker run -p 3001:3001 gg-edge-inference:latest
 wget https://localhost:3001 --no-check-certificate
 ```
+
+## Deploy the container to ECR and Greengrass
+
+Follow respective [guidelines](https://github.com/o7g8/client-based-inference/blob/master/README.md) in my other example.
+
+IMPORTANT: the Greengrass-hosted application will be exposed as HTTPS endpoint on the port `3002` (no to clash with development version running on port 3001). 

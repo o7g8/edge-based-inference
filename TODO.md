@@ -22,15 +22,17 @@ Check for the each case:
   - (image on client, model on server) send canvas 500x500 to the server
   - (image on server, model on server) request inference results of 500x500 images already stored on the server
 
-- Create a container.
+- Use GPU.
 
-- Deploy the container on GreenGrass.
+- Send frames w/o 5sec delay and make a stress-test of the API with ab, jmeter or similar. 
 
 - Deploy a local model.
-
-- Use GPU.
 
 - Do model conversion from Keras to Tensorflow.js:
   - find YOLO3-tiny and others
 
 - Actor-based ingestion in a container comms over UNIX-sockets with inference in another container.
+
+## Open questions
+
+- Ask a Node.js expert: why on EC2 the node.js log shows latency on the api call doing inference 400-600ms while the measurement in the code shows 50-60?
