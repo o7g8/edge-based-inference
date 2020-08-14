@@ -22,6 +22,14 @@ Check for the each case:
   - (image on client, model on server) send canvas 500x500 to the server
   - (image on server, model on server) request inference results of 500x500 images already stored on the server
 
+- Create a container.
+
+- Deploy the container on GreenGrass.
+
+- Deploy a local model.
+
+- Use GPU.
+
 - Do model conversion from Keras to Tensorflow.js:
   - find YOLO3-tiny and others
 
