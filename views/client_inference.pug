@@ -14,13 +14,18 @@ table(border='1')
     td Model
     td Inference
     td Backend
+    td Model load (once)
+    td Inference latency
     td Predictions
   tr
     td client
     td client
     td client
     td#backend
+    td#modelLoad
+    td#latency
     td#status
+
 video#myVideo(autoplay='' muted='' playsinline='')
 canvas#myCanvas(width='500' height='500' style='display: none;')
 script
