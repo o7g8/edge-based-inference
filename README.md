@@ -17,7 +17,13 @@ Model load (incl. network latency): 2500ms
 
 `sudo npm install -g node-gyp`
 
-- Run the app :
+- Install modules:
+
+`npm install`
+
+## Test the application
+
+- Run the app (http is server on port 3000, https on 3001):
 
 `DEBUG=* npm start` (debug mode)
 
@@ -26,3 +32,18 @@ Model load (incl. network latency): 2500ms
 - If necessary, expose the public endpoint with ngrok:
 
 `./ngrok_https.sh`
+
+- Open the https enpoint in your browser.
+
+## Build Docker image
+
+- Build the image `gg-edge-inference:latest`:
+
+`./docker_build.sh`
+
+- Test the image:
+
+```
+docker run -p 3001:3001 gg-edge-inference:latest
+wget https://localhost:3001 --no-check-certificate
+```

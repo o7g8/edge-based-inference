@@ -1,0 +1,5 @@
+node_modules
+npm-debug.log
+.vscode
+ngrok_https.sh
+docker_build.sh
