@@ -13,12 +13,18 @@ table(border='1')
     td Model
     td Inference
     td Backend
+    td Model load (once)
+    td Network transfer
+    td Inference latency
     td Predictions
   tr
     td client
     td server
     td server
     td#backend
+    td N/A*
+    td#network
+    td#latency
     td#status
 video#myVideo(autoplay='' muted='' playsinline='')
 canvas#myCanvas(width='500' height='500' style='display: none;')

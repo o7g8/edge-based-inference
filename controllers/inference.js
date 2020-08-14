@@ -1,6 +1,7 @@
 const tfnode = require('@tensorflow/tfjs-node');
 const mobilenet = require('@tensorflow-models/mobilenet');
 const tfBackend = tfnode.getBackend();
+const { performance } = require('perf_hooks');
 var model;
 
 exports.index = function(req, res, next) {
@@ -20,9 +21,13 @@ exports.postCanvas = async function (req, res, next) {
   if(model === undefined) {
     model = await mobilenet.load();
   }
+
+  const t1 = performance.now();
   const predictions = await model.classify(decodedImage);
+  const duration = performance.now() - t1;
 
   var result = predictions[0];
   result.backend = tfBackend;
+  result.inferenceDurationMs = duration;
   res.json(result);
 }

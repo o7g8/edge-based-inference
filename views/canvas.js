@@ -1,6 +1,8 @@
 (async () => {
     const status = document.getElementById('status');
     const backend = document.getElementById('backend');
+    const network = document.getElementById('network');
+    const latency = document.getElementById('latency');
     const myVideo = document.getElementById('myVideo');
     const myCanvas = document.getElementById('myCanvas');
     const ctx = myCanvas.getContext('2d');
@@ -32,7 +34,9 @@
       var imageJpg = myCanvas.toDataURL('image/jpeg', 1.0);
       xhttp.open('POST', '/inference/api/canvas', true);
       xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      xhttp.send("imgData=" + encodeURIComponent(imageJpg));
+      const encodedImage = encodeURIComponent(imageJpg);
+      xhttp.send("imgData=" + encodedImage);
+      network.innerHTML = `${(encodedImage.length/1024).toFixed(2)}kb/frame`;
     }
 
     function processInferenceResult(resultStr) {
@@ -40,5 +44,6 @@
       const result = JSON.parse(resultStr);
       status.innerHTML = `${result.className}@${result.probability.toPrecision(1)}`;
       backend.innerHTML = result.backend;
+      latency.innerHTML = `${result.inferenceDurationMs.toFixed(2)}ms (${(1000/result.inferenceDurationMs).toFixed(1)}FPS)`;
     }
   })();
