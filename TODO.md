@@ -24,7 +24,9 @@ Check for the each case:
 
 - Use GPU.
 
-- Send frames w/o 5sec delay and make a stress-test of the API with ab, jmeter or similar. 
+- Send frames w/o 5sec delay and make a stress-test of the API with ab, jmeter or similar.
+
+- Set CPU limits in the Docker compose.
 
 - Deploy a local model.
 
